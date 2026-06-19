@@ -411,7 +411,7 @@ from EmailJS dashboard
 */
 
 emailjs.init(
-    "YOUR_PUBLIC_KEY"
+    "MqQ88z3Z5Wes8DWIk"
 );
 
 const form =
@@ -426,9 +426,9 @@ form.addEventListener(
         e.preventDefault();
 
         emailjs.sendForm(
-            "YOUR_SERVICE_ID",
-            "YOUR_TEMPLATE_ID",
-            this
+            "service_mjslfu8",
+            "template_9h8v1qj",
+            
         )
         .then(() => {
 
