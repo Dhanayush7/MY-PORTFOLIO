@@ -114,10 +114,16 @@
                 </a>
 
                 <a href="assets/resume.pdf"
-                    class="btn-outline"
-                    download>
-                    Download Resume
-                </a>
+target="_blank"
+class="btn">
+View Resume
+</a>
+
+<a href="assets/resume.pdf"
+download
+class="btn-outline">
+Download Resume
+</a>
 
             </div>
 
@@ -654,6 +660,37 @@
 
     <!-- JS -->
     <script src="script.js"></script>
+
+    <div class="chat-toggle">
+💬
+</div>
+
+<div class="chat-box">
+
+<div class="chat-header">
+Ask Dhanayush
+</div>
+
+<div class="chat-messages"
+id="chatMessages">
+
+<div class="bot-message">
+Hello 👋 Ask me about
+skills, projects or education.
+</div>
+
+</div>
+
+<input
+type="text"
+id="userInput"
+placeholder="Ask something...">
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
 
 </body>
 

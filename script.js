@@ -520,3 +520,78 @@ Welcome To Dhanayush Portfolio
 Built with HTML CSS JavaScript
 =====================================
 `);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const chatToggle =
+        document.querySelector(".chat-toggle");
+
+    const chatBox =
+        document.querySelector(".chat-box");
+
+    if(chatToggle && chatBox){
+
+        chatToggle.addEventListener("click", () => {
+
+            if(chatBox.style.display === "block"){
+                chatBox.style.display = "none";
+            } else {
+                chatBox.style.display = "block";
+            }
+
+        });
+
+    }
+
+});
+
+function sendMessage() {
+
+    const input = document.getElementById("userInput");
+    const messages = document.getElementById("chatMessages");
+
+    if (!input || !messages) {
+        console.log("Chat elements not found");
+        return;
+    }
+
+    const userText = input.value.trim();
+
+    if (userText === "") return;
+
+    messages.innerHTML += `
+        <div style="text-align:right; margin:10px;">
+            👤 ${userText}
+        </div>
+    `;
+
+    let reply = "";
+
+    const msg = userText.toLowerCase();
+
+    if (msg.includes("skills")) {
+        reply = "I know HTML, CSS, JavaScript and I'm currently learning React.";
+    }
+    else if (msg.includes("project")) {
+        reply = "I have built a Portfolio Website, Calculator, To-Do App and Image Gallery.";
+    }
+    else if (msg.includes("education")) {
+        reply = "I am pursuing B.Tech in Computer Science Engineering.";
+    }
+    else if (msg.includes("contact")) {
+        reply = "You can contact me through the contact section of this website.";
+    }
+    else {
+        reply = "Hello! Ask me about my skills, projects, education or contact details.";
+    }
+
+    messages.innerHTML += `
+        <div style="margin:10px;">
+            🤖 ${reply}
+        </div>
+    `;
+
+    input.value = "";
+
+    messages.scrollTop = messages.scrollHeight;
+}
